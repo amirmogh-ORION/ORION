@@ -30,7 +30,7 @@ class AgentReport(BaseModel):
     subject: str
     conclusion: str
     confidence: float = Field(ge=0, le=1)
-    evidence: list[Evidence] = []
+    evidence: list[Evidence] = Field(default_factory=list)
     generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class Decision(BaseModel):
@@ -41,9 +41,9 @@ class Decision(BaseModel):
     confidence: float = Field(ge=0, le=1)
     expected_return: float | None = None
     downside: float | None = None
-    invalidation: list[str] = []
-    evidence: list[Evidence] = []
-    agents_consulted: list[str] = []
+    invalidation: list[str] = Field(default_factory=list)
+    evidence: list[Evidence] = Field(default_factory=list)
+    agents_consulted: list[str] = Field(default_factory=list)
     review_at: datetime | None = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
