@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: '17 * * * 1-5'
   workflow_dispatch:
+  push:
+    paths:
+      - src/orion/market_snapshot.py
+      - .github/workflows/market-snapshot.yml
 jobs:
   snapshot:
     runs-on: ubuntu-latest
