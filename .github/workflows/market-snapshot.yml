@@ -1,0 +1,26 @@
+name: Market price snapshot
+on:
+  schedule:
+    - cron: '17 * * * 1-5'
+  workflow_dispatch:
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch market observations
+        env:
+          ORION_WATCHLIST: ${{ vars.ORION_WATCHLIST }}
+          PYTHONPATH: src
+        run: python -m orion.market_snapshot
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: market-snapshot
+          path: reports/latest.json
+          retention-days: 30
