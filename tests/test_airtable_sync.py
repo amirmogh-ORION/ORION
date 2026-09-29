@@ -53,6 +53,19 @@ class AirtableSyncTest(unittest.TestCase):
     def test_preopen_monday_allows_friday_close(self):
         self.assertEqual(expected_us_session('2026-09-28T13:00:00Z'), '2026-09-25')
 
+    def test_same_day_intraday_observation_passes(self):
+        intraday = dict(REPORT, observed_at='2026-09-29T14:29:37Z',
+                        results=[dict(REPORT['results'][0], date='2026-09-29')])
+        rows = record_payloads(intraday, '457', 'amirmogh-ORION/ORION')
+        self.assertEqual(rows[0][3]['Status'], 'COMPLETED')
+        self.assertEqual(rows[1][3]['Event Type'], 'SCAN')
+
+    def test_previous_close_during_market_open_is_accepted(self):
+        opening_lag = dict(REPORT, observed_at='2026-09-29T13:31:00Z',
+                           results=[dict(REPORT['results'][0], date='2026-09-28')])
+        rows = record_payloads(opening_lag, '458', 'amirmogh-ORION/ORION')
+        self.assertEqual(rows[0][3]['Status'], 'COMPLETED')
+
     def test_missing_credentials_fail_visibly(self):
         with self.assertRaisesRegex(ValueError, "required"):
             sync(REPORT, "123", "amirmogh-ORION/ORION", "", "")
