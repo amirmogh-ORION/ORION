@@ -7,6 +7,7 @@ from .domain import AgentReport, Evidence
 class AgentContext:
     cycle_id: str
     subjects: list[str]
+    active_rules: tuple[str, ...] = ()
 
 class Agent(ABC):
     name: str
@@ -28,7 +29,7 @@ class StubAgent(Agent):
                 confidence=0.0,
                 evidence=[Evidence(
                     source="internal",
-                    claim="No external market data was used in this cycle",
+                    claim=f"No external market data was used in this cycle; {len(context.active_rules)} active learned rules were loaded",
                     reliability=1.0,
                 )],
             )
