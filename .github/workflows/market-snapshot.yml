@@ -14,8 +14,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
       - name: Fetch market observations
@@ -23,7 +23,7 @@ jobs:
           ORION_WATCHLIST: ${{ vars.ORION_WATCHLIST }}
           PYTHONPATH: src
         run: python -m orion.market_snapshot
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: market-snapshot
