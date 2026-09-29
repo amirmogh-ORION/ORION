@@ -9,13 +9,26 @@ from urllib.request import Request, urlopen
 
 
 def expected_us_session(observed_at):
+    return acceptable_us_sessions(observed_at)[0]
+
+
+def acceptable_us_sessions(observed_at):
     local = datetime.fromisoformat(observed_at.replace('Z', '+00:00')).astimezone(ZoneInfo('America/New_York'))
     day = local.date()
-    if local.weekday() >= 5 or local.hour < 18:
-        day -= timedelta(days=1)
-    while day.weekday() >= 5:
-        day -= timedelta(days=1)
-    return day.isoformat()
+    previous = day - timedelta(days=1)
+    while previous.weekday() >= 5:
+        previous -= timedelta(days=1)
+    if local.weekday() >= 5:
+        return (previous.isoformat(),)
+    minutes = local.hour * 60 + local.minute
+    if minutes < 9 * 60 + 30:
+        return (previous.isoformat(),)
+    if minutes < 16 * 60:
+        # Yahoo's daily bar can be either today's live observation or the
+        # previous close shortly after the opening bell. Both are valid price
+        # observations, but neither is treated as a completed research signal.
+        return (day.isoformat(), previous.isoformat())
+    return (day.isoformat(),)
 
 
 def record_payloads(report, run_id, repository):
@@ -24,8 +37,8 @@ def record_payloads(report, run_id, repository):
     results = report.get("results", [])
     observed = [item for item in results if item.get("status") == "observed"]
     failed = [item for item in results if item.get("status") != "observed"]
-    expected = expected_us_session(report["observed_at"])
-    stale = [item for item in observed if item.get("date") != expected]
+    acceptable = acceptable_us_sessions(report["observed_at"])
+    stale = [item for item in observed if item.get("date") not in acceptable]
     good = bool(observed) and not stale and not failed
     status = "COMPLETED" if good else "FAILED"
     run_url = f"https://github.com/{repository}/actions/runs/{run_id}"
@@ -33,7 +46,8 @@ def record_payloads(report, run_id, repository):
     summary = (
         f"{len(observed)} observed prices: "
         + ", ".join(f"{item['symbol']} ({item['date']})" for item in observed)
-        + f"; {len(failed)} unavailable/invalid; {len(stale)} stale for expected US session {expected}. "
+        + f"; {len(failed)} unavailable/invalid; {len(stale)} stale/outside accepted US session dates "
+        + f"{', '.join(acceptable)}. "
         + f"Source artifact: {run_url}. "
         "Price observations only; no research conclusions, signals, or trades."
     )
