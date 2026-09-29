@@ -2,8 +2,20 @@
 import json
 import os
 from pathlib import Path
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
+
+
+def expected_us_session(observed_at):
+    local = datetime.fromisoformat(observed_at.replace('Z', '+00:00')).astimezone(ZoneInfo('America/New_York'))
+    day = local.date()
+    if local.weekday() >= 5 or local.hour < 18:
+        day -= timedelta(days=1)
+    while day.weekday() >= 5:
+        day -= timedelta(days=1)
+    return day.isoformat()
 
 
 def record_payloads(report, run_id, repository):
@@ -12,25 +24,28 @@ def record_payloads(report, run_id, repository):
     results = report.get("results", [])
     observed = [item for item in results if item.get("status") == "observed"]
     failed = [item for item in results if item.get("status") != "observed"]
-    if not observed:
-        raise ValueError("No observed prices to log")
+    expected = expected_us_session(report["observed_at"])
+    stale = [item for item in observed if item.get("date") != expected]
+    good = bool(observed) and not stale and not failed
+    status = "COMPLETED" if good else "FAILED"
     run_url = f"https://github.com/{repository}/actions/runs/{run_id}"
     label = f"GitHub market snapshot {run_id}"
     summary = (
         f"{len(observed)} observed prices: "
         + ", ".join(f"{item['symbol']} ({item['date']})" for item in observed)
-        + f"; {len(failed)} unavailable/invalid. Source artifact: {run_url}. "
+        + f"; {len(failed)} unavailable/invalid; {len(stale)} stale for expected US session {expected}. "
+        + f"Source artifact: {run_url}. "
         "Price observations only; no research conclusions, signals, or trades."
     )
     started = report["observed_at"]
     return [
         ("Runs", "Run", label, {
-            "Run": label, "Run Type": "MARKETS", "Status": "COMPLETED",
+            "Run": label, "Run Type": "MARKETS", "Status": status,
             "Started": started, "Completed": started, "Output Summary": summary,
         }),
         ("Activity Log", "Event", label, {
             "Event": label, "Agent": "GitHub Actions market snapshot job",
-            "Event Type": "SCAN", "Details": summary, "Timestamp": started,
+            "Event Type": "SCAN" if good else "ERROR", "Details": summary, "Timestamp": started,
         }),
     ]
 
@@ -60,6 +75,8 @@ def main():
     sync(report, os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_REPOSITORY"],
          os.environ.get("ORION_AIRTABLE_BASE_ID"), os.environ.get("ORION_AIRTABLE_TOKEN"))
     print("Airtable run and activity records synchronized")
+    if record_payloads(report, os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_REPOSITORY"])[0][3]["Status"] != "COMPLETED":
+        raise SystemExit("Market snapshot failed data quality gate")
 
 
 if __name__ == "__main__":
