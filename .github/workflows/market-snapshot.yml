@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - src/orion/market_snapshot.py
+      - src/orion/airtable_sync.py
       - .github/workflows/market-snapshot.yml
 jobs:
   snapshot:
@@ -28,3 +29,10 @@ jobs:
           name: market-snapshot
           path: reports/latest.json
           retention-days: 30
+      - name: Log verified run to Airtable
+        if: github.ref == 'refs/heads/main'
+        env:
+          ORION_AIRTABLE_BASE_ID: ${{ vars.ORION_AIRTABLE_BASE_ID }}
+          ORION_AIRTABLE_TOKEN: ${{ secrets.ORION_AIRTABLE_TOKEN }}
+          PYTHONPATH: src
+        run: python -m orion.airtable_sync
