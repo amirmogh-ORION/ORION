@@ -66,7 +66,10 @@ jobs:
             parent=$(git rev-parse FETCH_HEAD)
             git read-tree "$parent"
           fi
-          git add -f state/mission.json reports/mission.json reports/cycles/
+          cycle=$(python -c 'import json; print(json.load(open("reports/mission.json"))["cycle_id"])')
+          # Add only the new cycle. Adding the entire directory would stage
+          # deletion of archived reports absent from this application's checkout.
+          git add -f state/mission.json reports/mission.json "reports/cycles/$cycle.json"
           tree=$(git write-tree)
           if [ -n "${parent:-}" ]; then
             commit=$(git commit-tree "$tree" -p "$parent" -m "Persist ORION mission $GITHUB_RUN_ID")
