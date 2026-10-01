@@ -17,6 +17,24 @@ Build a persistent research team that:
 
 ORION is initially a research and decision-support system. Actual financial transactions remain explicitly authorized by the human operator.
 
+## Current execution
+
+The mission workflow runs every four hours, including weekends. It screens
+168 stocks, ETFs, commodity proxies and crypto instruments, scans official
+CanadaBuys open tenders, retrieves SEC annual financial facts where available,
+and records attributable deterministic worker output plus research decisions.
+Current Airtable opportunities are reviewed with explicit missing inputs and
+deadlines. Sources and decisions are synchronized to the Command Center.
+
+State and immutable cycle reports live on the separate `orion-state` branch.
+The web console reads the latest persisted evidence instead of generating
+placeholder reports. `orion` or `python -m orion.mission` runs the actual cycle.
+
+These are deterministic research workers covering part of the agent registry,
+not 31 autonomous analysts. NEEDS DATA is unresolved and screening is not
+validated investment research. See [MISSION_PROGRESS.md](MISSION_PROGRESS.md)
+for implemented capabilities and remaining economic-mission gaps.
+
 ## Core agents
 
 1. **Commander** — orchestration, task allocation, conflict resolution.

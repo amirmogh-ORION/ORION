@@ -276,7 +276,7 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
     cycle = str(uuid4())
     tasks = []
     previous = previous or {}
-    task(tasks, cycle, "Commander Agent", "cycle", {"assigned_universe": sum(map(len, universe.values())),
+    task(tasks, cycle, "ORION Commander", "cycle", {"assigned_universe": sum(map(len, universe.values())),
          "backlog": len(backlog), "mode": "research_only"}, now)
     pairs = [(symbol, cat) for cat, symbols in universe.items() for symbol in symbols]
     with ThreadPoolExecutor(max_workers=workers) as pool:
