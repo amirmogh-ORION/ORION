@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timedelta, timezone
 import pytest
 from orion.mission import history, run_mission, parse_tenders, TENDERS, review_backlog, annual_facts
-from orion.mission_sync import projection
+from orion.mission_sync import projection, sync_mission
 
 NOW = datetime(2026, 10, 1, 12, tzinfo=timezone.utc)
 
@@ -100,3 +100,28 @@ def test_filing_parser_rejects_future_filings_and_quarter_as_annual():
     ]}}}}})
     result = annual_facts(raw, NOW)
     assert result["annual_facts"]["net_income"]["value"] == 100
+
+
+def test_official_tender_without_notice_url_still_has_dataset_provenance():
+    raw = ('title-titre-eng,tenderClosingDate-appelOffresDateCloture,noticeURL-URLavis-eng,'
+           'solicitationNumber-numeroSollicitation\nUPS,2026-10-10,,ABC\n')
+    _, candidates = parse_tenders(raw, NOW)
+    assert candidates[0]["source"] == TENDERS
+    assert candidates[0]["id"] == "tender:ABC"
+
+
+def test_machine_triage_cannot_overwrite_external_analyst_decision():
+    class Client:
+        writes = []
+        def records(self, table):
+            if table == "Opportunities":
+                return [{"fields": {"Opportunity": "A", "Status": "QUALIFIED",
+                        "Actual Result": "Independent analyst qualification with evidence"}}]
+            return []
+        def upsert(self, table, key, records):
+            self.writes.append((table, records))
+    client = Client()
+    backlog = [{"id": "a", "fields": {"Opportunity": "A", "Status": "DISCOVERY"}}]
+    report, _ = run_mission({}, backlog, now=NOW, getter=getter)
+    sync_mission(client, report, "https://github.com/owner/repo/actions/runs/1")
+    assert not any(r.get("Opportunity") == "A" for table, rows in client.writes if table == "Opportunities" for r in rows)

@@ -103,6 +103,7 @@ def parse_tenders(raw, now):
     link = column("notice url", "noticeurl-urlavis-eng", "noticeurl-urlavis", "url")
     buyer = column("contracting organization", "contractingentityname-nomentitcontractante-eng", "contractingentity-entitecontractante-eng", "contracting-entity")
     ident = column("solicitation number", "solicitationnumber-numerosollicitation", "reference number")
+    attachments = column("attachment-piecesjointes-eng")
     if not all((title, closing, link)):
         raise ValueError("CanadaBuys schema changed; required title/closing/URL columns missing: " + ", ".join(headers))
     results, total = [], 0
@@ -123,8 +124,10 @@ def parse_tenders(raw, now):
         days = (date.date() - now.date()).days
         if days < 0:
             continue
-        results.append({"id": "tender:" + (row.get(ident) or row[link]), "name": name,
-                        "category": "Procurement", "source": row[link],
+        notice = row[link].strip()
+        results.append({"id": "tender:" + (row.get(ident) or notice or name), "name": name,
+                        "category": "Procurement", "source": notice or TENDERS,
+                        "notice_url": notice, "attachments": row.get(attachments, "") if attachments else "",
                         "buyer": row.get(buyer, "") if buyer else "", "closing_date": iso(date),
                         "days_remaining": days, "source_observed_at": iso(now)})
     return total, sorted(results, key=lambda r: (r["days_remaining"], r["id"]))
@@ -134,6 +137,9 @@ def tender_scan(now, getter=fetch):
     try:
         raw = getter(TENDERS)
         total, candidates = parse_tenders(raw, now)
+        source_hash = hashlib.sha256(raw.encode()).hexdigest()
+        for candidate in candidates:
+            candidate["source_sha256"] = source_hash
         return {"status": "observed", "source": TENDERS, "source_sha256": hashlib.sha256(raw.encode()).hexdigest(),
                 "rows_observed": total, "candidates": candidates, "observed_at": iso(now)}
     except (OSError, ValueError, csv.Error) as exc:
@@ -238,7 +244,15 @@ def fundamental_scan(symbols, now, getter=fetch):
         registry = json.loads(getter(registry_url))
         ciks = {r["ticker"]: r["cik_str"] for r in registry.values()}
     except (OSError, ValueError, KeyError, TypeError) as exc:
-        return [{"symbol": s, "status": "unavailable", "source": registry_url, "error": str(exc)} for s in symbols]
+        # Ticker-to-CIK mapping is stable reference data, distinct from live
+        # financial facts. A recent verified snapshot avoids a registry outage
+        # blocking every company request. It is never a price/facts substitute.
+        checkpoint = ROOT/"config/sec_registry.json"
+        cached = json.loads(checkpoint.read_text()) if checkpoint.exists() else {}
+        checked = datetime.fromisoformat(cached["observed_at"]) if cached.get("observed_at") else None
+        if not checked or not timedelta(0) <= now-checked <= timedelta(days=30):
+            return [{"symbol": s, "status": "unavailable", "source": registry_url, "error": str(exc)} for s in symbols]
+        ciks = cached["mapping"]
     output = []
     for symbol in sorted(set(symbols)):
         if symbol not in ciks:
