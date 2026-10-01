@@ -1,0 +1,76 @@
+name: ORION mission cycle
+on:
+  schedule:
+    - cron: '43 */4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - src/orion/mission.py
+      - src/orion/mission_sync.py
+      - config/**
+      - .github/workflows/mission.yml
+concurrency:
+  group: orion-mission
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  mission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+      ORION_AIRTABLE_BASE_ID: ${{ vars.ORION_AIRTABLE_BASE_ID }}
+      ORION_AIRTABLE_TOKEN: ${{ secrets.ORION_AIRTABLE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Restore persistent mission state
+        run: |
+          mkdir -p state reports/cycles
+          if git fetch origin orion-state; then
+            git show FETCH_HEAD:state/mission.json > state/mission.json
+          fi
+      - name: Load current Airtable backlog
+        run: python -m orion.mission_sync --pull
+      - name: Run attributable research workers
+        id: research
+        run: python -m orion.mission --backlog state/backlog.json
+      - name: Synchronize mission outputs
+        if: always() && steps.research.outcome != 'skipped'
+        run: python -m orion.mission_sync
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: mission-evidence
+          path: |
+            reports/
+            state/
+          retention-days: 90
+      - name: Persist state and immutable cycle report
+        if: always() && steps.research.outcome != 'skipped'
+        run: |
+          test -s reports/mission.json
+          test -s state/mission.json
+          git config user.name "ORION mission worker"
+          git config user.email "orion-worker@users.noreply.github.com"
+          # A Git tree based on the previous state branch retains cycle history
+          # without changing application code or racing deployments.
+          git read-tree --empty
+          if git rev-parse --verify FETCH_HEAD >/dev/null 2>&1 && git cat-file -e FETCH_HEAD:state/mission.json 2>/dev/null; then
+            parent=$(git rev-parse FETCH_HEAD)
+            git read-tree "$parent"
+          fi
+          git add -f state/mission.json reports/mission.json reports/cycles/
+          tree=$(git write-tree)
+          if [ -n "${parent:-}" ]; then
+            commit=$(git commit-tree "$tree" -p "$parent" -m "Persist ORION mission $GITHUB_RUN_ID")
+          else
+            commit=$(git commit-tree "$tree" -m "Initialize ORION mission state $GITHUB_RUN_ID")
+          fi
+          git push origin "$commit:refs/heads/orion-state"

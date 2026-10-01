@@ -1,0 +1,197 @@
+[
+  {
+    "id": "rec6YGMzYvmwuSCWn",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "WAIT rather than chase. New Cobre Panama restart proposal could eventually return supply equal to ~1% of world copper production. Retain structural thesis, but require pullback near $14.1k or evidence restart is blocked/delayed.",
+      "Opportunity": "Copper structural supply squeeze",
+      "Potential Entry": 14100,
+      "Time Horizon": "1–6 months",
+      "Key Risks": "Weak China demand; stronger USD; high yields; geopolitical volatility.",
+      "Expected Return": 0.0816,
+      "Evidence": "LME Sep 28 cash ask $14,740/t. Reuters: China refined output growth expected only 3–3.4% in 2026, slowest since at least 2000; possible Q4 maintenance and feedstock constraints.",
+      "Confidence": 0.66,
+      "Current Price/Cost": 14740,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "WATCHLIST",
+      "Category": "Commodities",
+      "Potential Exit": 15250
+    }
+  },
+  {
+    "id": "rec70Jof6boIstf7g",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "Thesis strengthened by India's $19.4B renewable/transmission/storage program and EIB/BNP grid financing. Continue customer/RFQ-first sourcing across UPS, switchgear, transformers, grid components, storage and cooling; avoid speculative inventory.",
+      "Opportunity": "AI data-center power/cooling brokerage",
+      "Time Horizon": "6–36 months",
+      "Key Risks": "Customer concentration; long sales cycles; certification; working capital; hyperscaler procurement barriers.",
+      "Evidence": "Anthropic prospectus reportedly commits at least $518B over a decade to compute infrastructure, strengthening evidence that compute/power/cooling availability is a binding constraint.",
+      "Confidence": 0.84,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "WATCHLIST",
+      "Category": "Business"
+    }
+  },
+  {
+    "id": "rec9sk6oj8XV52D81",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "Price condition is met near $60–61, but macro confirmation is incomplete. Upgrade only if long yields stabilize/fall and silver holds $60; reassess on sustained break below $58.",
+      "Opportunity": "Silver macro pullback",
+      "Potential Entry": 60,
+      "Time Horizon": "Weeks–months",
+      "Key Risks": "Further rate hikes, stronger USD, liquidation; high volatility.",
+      "Expected Return": 0.1,
+      "Evidence": "Spot around $60.8 on Sep 29 after Sep 28 selloff; high Treasury yields and hawkish Fed expectations remain headwinds.",
+      "Confidence": 0.55,
+      "Current Price/Cost": 60.71,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "WATCHLIST",
+      "Category": "Commodities",
+      "Potential Exit": 66
+    }
+  },
+  {
+    "id": "recEQgMWrBkt3qfoY",
+    "created_at": "2026-09-29T00:27:10.000Z",
+    "fields": {
+      "Next Trigger": "Run independent research and risk checks; reject or advance only with evidence, thesis, invalidation, and dated sources.",
+      "Opportunity": "AAPL — screening input",
+      "Key Risks": "No fundamental, quantitative, risk, IPO, or portfolio assessment has been completed. Price data may be delayed or revised.",
+      "Evidence": "Observed closing price 338.40 USD, dated 2026-09-28. Price-source URL: https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=1d\nORION snapshot run and downloadable artifact: https://github.com/amirmogh-ORION/ORION/actions/runs/36497919071\nThis is an observed price only; no research thesis or recommendation.",
+      "Status": "DISCOVERY",
+      "Category": "Stocks"
+    }
+  },
+  {
+    "id": "recF7HRuPm9FwywUZ",
+    "created_at": "2026-09-30T18:48:09.000Z",
+    "fields": {
+      "Next Trigger": "Verify solicitation specifications and approved sourcing immediately; only advance if compliant supply and margin can be established before Oct. 5.",
+      "Opportunity": "DND power electrical cable procurement",
+      "Key Risks": "Short diligence window, military specifications, source/qualification requirements and delivery obligations.",
+      "Evidence": "CanadaBuys lists Procurement of CABLE ASSEMBLY, POWER, ELECTRICAL closing Oct. 5, 2026; broader DND cables/wires supply arrangement runs to 2030.",
+      "Confidence": 0.71,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "DISCOVERY",
+      "Category": "Procurement"
+    }
+  },
+  {
+    "id": "recLI71shcS6y3kSJ",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "No entry level until final price/terms. Use filing primarily as demand evidence for data-center power/cooling/compute supply chain.",
+      "Opportunity": "Anthropic IPO / AI infrastructure read-through",
+      "Time Horizon": "IPO / multi-year theme",
+      "Key Risks": "Extreme valuation; $42B 2025 loss; governance concentration; compute obligations; IPO market deterioration.",
+      "Evidence": "Reuters reports Anthropic IPO prospectus targets valuation around $2T and at least $518B decade-long AI infrastructure commitments, ~80% binding or payable regardless of usage.",
+      "Confidence": 0.67,
+      "Last Updated": "2026-09-29T19:08:30.000Z",
+      "Status": "VERIFYING",
+      "Category": "IPOs"
+    }
+  },
+  {
+    "id": "recMDYAeX3YizmNWv",
+    "created_at": "2026-09-30T18:48:09.000Z",
+    "fields": {
+      "Next Trigger": "Retrieve exact quantity/specification and reseller/equivalent requirements; calculate landed margin only after compliant supplier quote.",
+      "Opportunity": "Shared Services Canada edge-AI hardware procurement",
+      "Key Risks": "Exact-brand/equivalency rules, reseller authorization, thin hardware margins and short lead time may limit broker economics.",
+      "Evidence": "CanadaBuys lists UP Xtreme ARL / Intel Core Ultra 7 goods procurement, opened Sep. 25 and closing Oct. 12, 2026.",
+      "Confidence": 0.62,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "DISCOVERY",
+      "Category": "Procurement"
+    }
+  },
+  {
+    "id": "recPuiBmnbpCtx6cb",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "Tender remains open through Oct. 6. Immediate research gate: exact specification + compliant supplier quote + freight/warranty/delivery economics. No profit estimate until those inputs are verified.",
+      "Opportunity": "NRC UPS tender brokerage",
+      "Time Horizon": "Bid closes 2026-10-06",
+      "Key Risks": "Technical compliance, supplier eligibility, delivery timing, unknown landed margin.",
+      "Evidence": "CanadaBuys confirms NRC Uninterruptible Power Supply goods tender amended Sep 22, closing Oct 6.",
+      "Confidence": 0.8,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "VERIFYING",
+      "Category": "Procurement"
+    }
+  },
+  {
+    "id": "recb0kbS1AmZMGwze",
+    "created_at": "2026-09-30T18:48:09.000Z",
+    "fields": {
+      "Next Trigger": "Map equipment categories and buyers first; seek live RFQs/qualified channel partners before supplier sourcing or inventory. Economics remain TBD until an actual RFQ exists.",
+      "Opportunity": "India grid + battery storage supply-chain brokerage",
+      "Key Risks": "Large program does not imply easy broker access; local qualification, approved vendors, financing, import/local-content requirements and long sales cycles can destroy economics.",
+      "Evidence": "India approved a 1.86 trillion rupee (~$19.42B) renewable-energy program on Sep. 30, including 1.36T rupees for intrastate transmission supporting 135 GW and 500B rupees of incentives for 50 GWh of battery storage.",
+      "Confidence": 0.77,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "DISCOVERY",
+      "Category": "Business"
+    }
+  },
+  {
+    "id": "recoMNqJgUICu47Z4",
+    "created_at": "2026-09-29T00:27:10.000Z",
+    "fields": {
+      "Next Trigger": "Run independent research and risk checks; reject or advance only with evidence, thesis, invalidation, and dated sources.",
+      "Opportunity": "MSFT — screening input",
+      "Key Risks": "No fundamental, quantitative, risk, IPO, or portfolio assessment has been completed. Price data may be delayed or revised.",
+      "Evidence": "Observed closing price 509.22 USD, dated 2026-09-28. Price-source URL: https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=5d&interval=1d\nORION snapshot run and downloadable artifact: https://github.com/amirmogh-ORION/ORION/actions/runs/36497919071\nThis is an observed price only; no research thesis or recommendation.",
+      "Status": "DISCOVERY",
+      "Category": "Stocks"
+    }
+  },
+  {
+    "id": "recs79iaj72h9mpXr",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "Previous ORION closing-date note was stale/incorrect. CanadaBuys currently shows this special-purpose electrical cable tender closing Oct. 1, 2026, leaving insufficient diligence/sourcing time for this cycle. Reject for now rather than force a bid.",
+      "Opportunity": "DND special-purpose electrical cable tender",
+      "Time Horizon": "Bid closes 2026-10-16",
+      "Key Risks": "Specification/approved-source constraints; defence procurement compliance; margin unknown.",
+      "Evidence": "CanadaBuys lists amended DND tender for special-purpose electrical cable, closing Oct 16.",
+      "Confidence": 0.66,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "REJECTED",
+      "Category": "Procurement"
+    }
+  },
+  {
+    "id": "recso4haRbbTm5OxF",
+    "created_at": "2026-09-29T19:09:10.000Z",
+    "fields": {
+      "Next Trigger": "BTC rebounded after softer PCE reduced Fed-hike expectations. Do not chase above the preferred zone; retain $80k–82k pullback trigger, reassess below $78k, and require macro/yield confirmation.",
+      "Opportunity": "Bitcoin risk-off pullback",
+      "Potential Entry": 81000,
+      "Time Horizon": "Weeks–months",
+      "Key Risks": "Liquidity/rate shock; crypto volatility; geopolitical risk.",
+      "Expected Return": 0.1111,
+      "Evidence": "BTC reference $83,485 early Sep 29; Strategy bought 1,665 BTC at average $85,681 while BTC remained volatile under high yields.",
+      "Confidence": 0.63,
+      "Current Price/Cost": 84553.16,
+      "Last Updated": "2026-09-30T18:47:25.000Z",
+      "Status": "WATCHLIST",
+      "Category": "Crypto",
+      "Potential Exit": 90000
+    }
+  },
+  {
+    "id": "reczK46pHVOh1XvH7",
+    "created_at": "2026-09-29T00:27:10.000Z",
+    "fields": {
+      "Next Trigger": "Run independent research and risk checks; reject or advance only with evidence, thesis, invalidation, and dated sources.",
+      "Opportunity": "SPY — screening input",
+      "Key Risks": "No fundamental, quantitative, risk, IPO, or portfolio assessment has been completed. Price data may be delayed or revised.",
+      "Evidence": "Observed closing price 765.61 USD, dated 2026-09-28. Price-source URL: https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=1d\nORION snapshot run and downloadable artifact: https://github.com/amirmogh-ORION/ORION/actions/runs/36497919071\nThis is an observed price only; no research thesis or recommendation.",
+      "Status": "DISCOVERY",
+      "Category": "ETFs"
+    }
+  }
+]
