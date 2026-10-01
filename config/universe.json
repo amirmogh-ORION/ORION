@@ -1,0 +1,6 @@
+{
+  "Stocks": ["AAPL","MSFT","NVDA","AMZN","GOOGL","META","AVGO","AMD","INTC","ARM","MU","TSM","ASML","QCOM","ORCL","CRM","ADBE","NOW","SNOW","PLTR","PANW","CRWD","NET","DDOG","ZS","MDB","SHOP","UBER","ABNB","NFLX","DIS","COST","WMT","TGT","HD","LOW","MCD","SBUX","NKE","LULU","JPM","BAC","GS","MS","C","BLK","V","MA","AXP","BRK-B","XOM","CVX","COP","SLB","OXY","EOG","NEE","CEG","VST","DUK","SO","ETN","VRT","GE","CAT","DE","HON","RTX","LMT","NOC","GD","BA","UPS","FDX","UNP","CSX","WM","LIN","APD","FCX","NEM","GOLD","AA","NUE","STLD","LLY","JNJ","MRK","PFE","ABBV","AMGN","GILD","UNH","CVS","ISRG","TMO","DHR","ABT","BSX","BMY","MDT","ENB.TO","RY.TO","TD.TO","BNS.TO","BMO.TO","CNQ.TO","SU.TO","CNR.TO","CP.TO","BCE.TO","T.TO"],
+  "ETFs": ["SPY","QQQ","IWM","DIA","VTI","VEA","VWO","EFA","EEM","XLK","XLF","XLE","XLV","XLI","XLP","XLY","XLU","XLB","XLRE","XLC","SMH","SOXX","IGV","HACK","BOTZ","ARKK","ICLN","TAN","TLT","IEF","SHY","LQD","HYG","BND","TIP"],
+  "Commodities": ["GLD","SLV","CPER","USO","UNG","DBA","DBC","PPLT","PALL"],
+  "Crypto": ["BTC-USD","ETH-USD","SOL-USD","BNB-USD","XRP-USD","ADA-USD","DOGE-USD","AVAX-USD","LINK-USD","DOT-USD","LTC-USD","BCH-USD"]
+}

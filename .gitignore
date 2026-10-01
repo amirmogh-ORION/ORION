@@ -4,3 +4,6 @@ __pycache__/
 .venv/
 .env
 orion.db
+*.egg-info/
+reports/
+state/
