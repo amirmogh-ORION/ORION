@@ -102,6 +102,17 @@ def test_filing_parser_rejects_future_filings_and_quarter_as_annual():
     assert result["annual_facts"]["net_income"]["value"] == 100
 
 
+def test_filing_parser_accepts_foreign_issuer_20f_annual_fact():
+    raw = json.dumps({"entityName": "Foreign Issuer", "facts": {"us-gaap": {
+        "NetIncomeLoss": {"units": {"USD": [{
+            "form": "20-F", "start": "2025-04-01", "end": "2026-03-31",
+            "filed": "2026-05-01", "val": 123,
+        }]}}
+    }}})
+    result = annual_facts(raw, NOW)
+    assert result["annual_facts"]["net_income"]["value"] == 123
+
+
 def test_official_tender_without_notice_url_still_has_dataset_provenance():
     raw = ('title-titre-eng,tenderClosingDate-appelOffresDateCloture,noticeURL-URLavis-eng,'
            'solicitationNumber-numeroSollicitation\nUPS,2026-10-10,,ABC\n')

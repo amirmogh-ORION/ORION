@@ -220,7 +220,7 @@ def annual_facts(raw, now):
                 try:
                     start, end = datetime.fromisoformat(fact["start"]), datetime.fromisoformat(fact["end"])
                     filed = datetime.fromisoformat(fact["filed"])
-                    if (fact.get("form") == "10-K" and 330 <= (end-start).days <= 380
+                    if (fact.get("form") in {"10-K", "20-F"} and 330 <= (end-start).days <= 380
                             and filed.date() <= now.date() and end.date() <= now.date()
                             and math.isfinite(fact["val"])):
                         usable.append(fact)
@@ -263,7 +263,7 @@ def fundamental_scan(symbols, now, getter=fetch):
             raw = getter(url)
             data = annual_facts(raw, now)
             if not data["annual_facts"]:
-                raise ValueError("No sufficiently recent usable US GAAP annual facts")
+                raise ValueError("No sufficiently recent usable annual facts")
             output.append(dict(data, symbol=symbol, status="observed", source=url, observed_at=iso(now),
                                source_sha256=hashlib.sha256(raw.encode()).hexdigest()))
         except (OSError, ValueError, KeyError, TypeError) as exc:
