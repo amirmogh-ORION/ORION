@@ -121,6 +121,29 @@ def test_official_tender_without_notice_url_still_has_dataset_provenance():
     assert candidates[0]["id"] == "tender:ABC"
 
 
+def test_live_tender_is_merged_with_matching_airtable_research():
+    def duplicate_getter(url):
+        if url == TENDERS:
+            return ("title,tender closing date,notice url,contracting organization,solicitation number\n"
+                    "UPS battery,2026-10-15,https://canadabuys.canada.ca/tender/ABC123,NRC,ABC123\n")
+        return chart()
+
+    backlog = [{"id": "airtable-a", "fields": {
+        "Opportunity": "NRC UPS tender — ABC123", "Category": "Procurement", "Status": "NEEDS DATA",
+        "Evidence": "Official solicitation ABC123 requires a supplier quote.",
+    }}]
+    report, _ = run_mission({}, backlog, now=NOW, getter=duplicate_getter)
+
+    assert report["metrics"]["decisions"] == 1
+    assert report["metrics"]["NEEDS DATA"] == 1
+    decision = report["decisions"][0]
+    assert decision["id"] == "airtable-a"
+    assert decision["official_tender_observation"]["id"] == "tender:ABC123"
+    assert any(t["agent"] == "Opportunity Economics Agent"
+               and t["output"].get("deduplicated_live_tender") == "tender:ABC123"
+               for t in report["tasks"])
+
+
 def test_machine_triage_cannot_overwrite_external_analyst_decision():
     class Client:
         writes = []
