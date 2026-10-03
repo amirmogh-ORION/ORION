@@ -336,6 +336,28 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
                         "Buyer demand observed; specifications, supplier compliance and margin remain unverified.",
                  missing=[] if too_close else ["official notice specifications", "supplier quote/authorization", "landed economics", "buyer payment terms"],
                  owner="Supplier Agent", review_at=iso(now+timedelta(hours=24)), evaluated_at=iso(now), capital_action="NO ACTION")
+        # Airtable may already contain a researched version of the same live
+        # solicitation. Merge the fresh official observation into that record
+        # instead of inflating decision and overdue-review counts with a second
+        # machine-generated opportunity.
+        reference = item["id"].removeprefix("tender:").strip()
+        duplicate = None
+        if reference and "://" not in reference:
+            folded = reference.casefold()
+            duplicate = next((candidate for candidate in decisions
+                              if candidate.get("origin") == "airtable_backlog"
+                              and folded in ((candidate.get("name") or "") + " " +
+                                             (candidate.get("prior_evidence") or "")).casefold()), None)
+        if duplicate:
+            duplicate["official_tender_observation"] = {
+                key: item[key] for key in ("id", "source", "notice_url", "attachments", "buyer",
+                                           "closing_date", "days_remaining", "source_observed_at",
+                                           "source_sha256") if key in item
+            }
+            task(tasks, cycle, "Opportunity Economics Agent", duplicate["name"],
+                 {"economics": "UNAVAILABLE", "missing": duplicate["missing"],
+                  "deadline_gate": d["reason"], "deduplicated_live_tender": item["id"]}, now)
+            continue
         task(tasks, cycle, "Opportunity Economics Agent", d["name"],
              {"economics": "UNAVAILABLE", "missing": d["missing"], "deadline_gate": d["reason"]}, now)
         decisions.append(d)
