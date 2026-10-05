@@ -159,3 +159,19 @@ def test_machine_triage_cannot_overwrite_external_analyst_decision():
     report, _ = run_mission({}, backlog, now=NOW, getter=getter)
     sync_mission(client, report, "https://github.com/owner/repo/actions/runs/1")
     assert not any(r.get("Opportunity") == "A" for table, rows in client.writes if table == "Opportunities" for r in rows)
+
+
+def test_mission_produces_auditable_zero_shadow_allocation_for_unqualified_candidates():
+    report, _ = run_mission({"Stocks": ["X"]}, [], now=NOW, getter=getter)
+    assert report["metrics"]["shadow_portfolio_cap_cad"] == 1000.0
+    assert report["metrics"]["shadow_portfolio_value_cad"] == 0.0
+    assert report["decisions"]
+    for decision in report["decisions"]:
+        allocation = decision["shadow_allocation"]
+        assert allocation["approved"] is False
+        assert allocation["amount_cad"] == 0.0
+        assert allocation["portfolio_cap_cad"] == 1000.0
+        assert allocation["reason"]
+    capital_tasks = [t for t in report["tasks"] if t["agent"] == "Capital Allocation Agent"]
+    assert len(capital_tasks) == len(report["decisions"])
+    assert all(t["output"]["amount_cad"] == 0.0 for t in capital_tasks)
