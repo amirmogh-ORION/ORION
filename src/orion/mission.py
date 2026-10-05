@@ -20,6 +20,8 @@ from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
+from .shadow_portfolio import evaluate_shadow_allocation
+
 ROOT = Path(__file__).resolve().parents[2]
 TENDERS = "https://canadabuys.canada.ca/opendata/pub/openTenderNotice-ouvertAvisAppelOffres.csv?orion=1"
 VERSION = "mission-v1"
@@ -361,13 +363,40 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
         task(tasks, cycle, "Opportunity Economics Agent", d["name"],
              {"economics": "UNAVAILABLE", "missing": d["missing"], "deadline_gate": d["reason"]}, now)
         decisions.append(d)
+    # Shadow portfolio synthesis is deliberately fail-closed. Current mission
+    # candidates are research triage, not qualified capital proposals, so they
+    # must produce a tangible CAD 0 allocation with an attributable reason.
+    shadow_portfolio_cad = 0.0
     for d in decisions:
         old = old_decisions.get(d["id"], {})
         if old.get("review_at") and old.get("status") == d["status"]:
             d["review_at"] = old["review_at"]
         d["sla_overdue"] = datetime.fromisoformat(d["review_at"]) < now and d["status"] == "NEEDS DATA"
+        evidence_verified = d["status"] == "QUALIFIED" and not d.get("missing")
+        votes = ("APPROVE",) if evidence_verified else ("ABSTAIN",)
+        allocation = evaluate_shadow_allocation(
+            requested_cad=0.0 if not evidence_verified else min(100.0, 1000.0-shadow_portfolio_cad),
+            current_portfolio_cad=shadow_portfolio_cad,
+            evidence_fresh=not d["sla_overdue"],
+            evidence_verified=evidence_verified,
+            specialist_votes=votes,
+            risk_veto=d["status"] == "REJECTED",
+            instrument_type="LONG_CASH",
+        )
+        d["shadow_allocation"] = {
+            "approved": allocation.approved, "amount_cad": allocation.amount_cad,
+            "reason": allocation.reason, "risk_veto": allocation.risk_veto,
+            "portfolio_before_cad": shadow_portfolio_cad, "portfolio_cap_cad": 1000.0,
+        }
+        if allocation.approved:
+            shadow_portfolio_cad += allocation.amount_cad
+        task(tasks, cycle, "Capital Allocation Agent", d["name"], d["shadow_allocation"], now)
+        task(tasks, cycle, "Risk Agent", d["name"], {
+             "decision": d["status"], "risk_veto": allocation.risk_veto,
+             "allocation_cad": allocation.amount_cad, "reason": allocation.reason}, now)
         task(tasks, cycle, "Audit Agent", d["name"], {"decision": d["status"], "reason": d["reason"],
-             "missing": d["missing"], "review_at": d["review_at"], "capital_action": "NO ACTION"}, now)
+             "missing": d["missing"], "review_at": d["review_at"], "capital_action": "NO ACTION",
+             "shadow_allocation": d["shadow_allocation"]}, now)
     # Keep historical candidates even when an anomaly no longer triggers.
     state_decisions = dict(old_decisions)
     state_decisions.update({d["id"]: d for d in decisions})
@@ -399,7 +428,7 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
                "backlog_reviewed": len(backlog), "decisions": len(decisions), **counts,
                "tasks_assigned": len(tasks), "tasks_completed": successful, "tasks_failed": len(tasks)-successful,
                "functional_workers_with_output": len({t["agent"] for t in tasks if t["status"] == "COMPLETED"}),
-               "overdue_reviews": len(due), "outcomes_evaluated": len(outcomes), "capital_actions": 0}
+               "overdue_reviews": len(due), "outcomes_evaluated": len(outcomes), "capital_actions": 0,\n               "shadow_portfolio_value_cad": shadow_portfolio_cad, "shadow_portfolio_cap_cad": 1000.0}
     report = {"cycle_id": cycle, "version": VERSION, "started_at": iso(now), "completed_at": iso(datetime.now(timezone.utc)),
               "mode": "deterministic_research_workers", "metrics": metrics, "decisions": decisions,
               "tasks": tasks, "observations": observations, "procurement": tenders, "fundamentals": fundamentals, "outcomes": outcomes,
