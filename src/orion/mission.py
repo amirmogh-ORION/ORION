@@ -428,7 +428,8 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
                "backlog_reviewed": len(backlog), "decisions": len(decisions), **counts,
                "tasks_assigned": len(tasks), "tasks_completed": successful, "tasks_failed": len(tasks)-successful,
                "functional_workers_with_output": len({t["agent"] for t in tasks if t["status"] == "COMPLETED"}),
-               "overdue_reviews": len(due), "outcomes_evaluated": len(outcomes), "capital_actions": 0,\n               "shadow_portfolio_value_cad": shadow_portfolio_cad, "shadow_portfolio_cap_cad": 1000.0}
+               "overdue_reviews": len(due), "outcomes_evaluated": len(outcomes), "capital_actions": 0,
+               "shadow_portfolio_value_cad": shadow_portfolio_cad, "shadow_portfolio_cap_cad": 1000.0}
     report = {"cycle_id": cycle, "version": VERSION, "started_at": iso(now), "completed_at": iso(datetime.now(timezone.utc)),
               "mode": "deterministic_research_workers", "metrics": metrics, "decisions": decisions,
               "tasks": tasks, "observations": observations, "procurement": tenders, "fundamentals": fundamentals, "outcomes": outcomes,
