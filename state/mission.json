@@ -1,6 +1,6 @@
 {
   "version": "mission-v1",
-  "last_cycle": "aa9cb938-45af-4825-8626-431510ef9e3d",
+  "last_cycle": "875aede0-7ac5-4445-bdc7-40ba125fa218",
   "decisions": {
     "rec6YGMzYvmwuSCWn": {
       "id": "rec6YGMzYvmwuSCWn",
@@ -20,7 +20,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "WATCHLIST restored from attributable decision evidence after workflow run 37596759086 regressed the record. Current market check: CPER USD 40.03 (2026-10-07 00:15 UTC). Official USCF: futures-based copper proxy. SEC prospectus: 0.65% management fee + 0.23% other expenses (0.88% annual), brokerage additional. Reuters evidence supports physical tightness/Panama optionality but not a favorable entry at the current price. USD 10,000, fractional shares, 0.10% slippage each way, zero commission/tax/FX, 0.44% six-month prorated fund expense: bull USD46 => USD11,417.96 (+14.18%); base USD40 => USD9,928.66 (-0.71%); bear USD32 => USD7,942.93 (-20.57%). Sources: https://www.uscfinvestments.com/cper ; https://www.sec.gov/Archives/edgar/data/1479247/000207187626000122/i26205_cper-424b3.htm ; Reuters records in Research Sources.",
       "capital_action": "NO ACTION",
@@ -37,7 +37,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-04T17:04:10.356672+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "PRIOR EVIDENCE PRESERVED. Decision 2026-10-03: REJECTED as an ORION opportunity, despite genuine sector demand. Reuters reported Google supplier discussions for liquid-cooling components and a projected 2026 market above USD 17B, but these private talks are not a public buyer RFQ accessible to ORION. Reuters' utility/grid review found >700 GW of U.S. large-load requests, while stricter deposits and validation rules materially reduced pipelines; much demand may be duplicative/speculative. FERC also delayed PJM's backstop procurement five months and required better cost allocation to large new loads. Exact URLs: https://www.reuters.com/world/china/google-talks-with-chinas-envicool-others-buy-data-centre-cooling-systems-sources-2026-03-17/ ; https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/ ; https://www.reuters.com/business/energy/ferc-asks-grid-operator-pjm-revise-plan-shield-homes-from-data-center-costs-2026-09-30/",
       "capital_action": "NO ACTION",
@@ -61,7 +61,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "SAME-DATE NAV REVIEW 2026-10-07 22:38 ET: WATCHLIST retained, not QUALIFIED. Independent Oct 7 close USD53.82 (range USD53.60-54.39; 20.31M shares) remained 2.44% above the USD52.54 conditional level. iShares has now published Oct 7 NAV USD54.26 and net assets USD29.576B; comparing the same-date independent close implies an approximate 0.81% market discount to NAV. iShares' own closing-price/premium fields still lag at Oct 6, so the discount is explicitly calculated, not quoted as the sponsor's published premium/discount. Sponsor fee 0.50%, median spread 0.02%, 3-year standard deviation 44.35%. Treasury Oct 7 real yields remain 5Y 2.66%, 7Y 2.78%, 10Y 2.92%, 20Y 3.20%, 30Y 3.36%. CONDITIONAL ECONOMICS: USD10,000, fractional shares, 3 months, 0.05% slippage each way, 0.125% prorated sponsor fee, zero commission/tax/FX. 185.712 shares. Bull USD59.78 => USD11,082.42 (+10.82%); downside/entry USD52.54 => USD9,740.22 (-2.60%); severe USD45.29 => USD8,396.17 (-16.04%). No trade. Sources: https://www.ishares.com/us/products/239855/ISHARES-SILVER-TRUST-FUND ; https://stockanalysis.com/etf/slv/history/ ; https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_real_yield_curve",
       "capital_action": "NO ACTION",
@@ -85,7 +85,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "Checked 2026-10-07: AAPL USD 333.63 (market data 13:23:53 UTC). Apple Q3 FY2026 Form 10-Q/Exhibit 99.1: revenue USD 109.4B (+16%), net income USD 29.789B, diluted EPS USD 2.02 (+29%), gross margin 50.1%; tariff refund added about 2 points to gross margin and USD 0.11 EPS. Independent Reuters report: September-quarter revenue guide 9%-11% versus 12% consensus, with supply constraints. Conditional research economics, not a trade: USD 10,000 capital, 0.1% slippage each side, 29.943 shares after entry friction, assumed USD 1.08 annual dividend. At exits USD 400 / 314.50 / 200, net values USD 11,997.70 / 9,440.11 / 6,015.02; returns +19.98% / -5.60% / -39.85% over 12 months, before tax and FX.",
       "capital_action": "NO ACTION",
@@ -102,7 +102,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-04T04:50:17.159081+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "Decision: REJECTED for this solicitation cycle. Official RFP W8486-270955/A demands 400 new power cable assemblies: P/N 11682336-1, NCAGE 19207 or documented equivalent; 200 DDP Montr\u00e9al and 200 DDP Edmonton; Canadian dollars; taxes extra; delivery within 90 days of award. Mandatory evidence includes brochures/schematics/drawings or narrative\u2014web links alone are not accepted. Award is lowest aggregate evaluated price among technically compliant offers. Amendment 001 extends close to 2026-10-05 15:00 EDT. Conditional Indigenous set-aside applies if at least two compliant Indigenous offers remain. Economics: quantity 400 is verified, but supplier quote/unit cost, compliant technical package, freight/packaging/duties, bid price, warranty/rework reserve and working-capital terms are absent; therefore capital, revenue, landed margin, expected return and downside cannot be honestly calculated.",
       "capital_action": "NO ACTION",
@@ -126,7 +126,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "WATCHLIST RECHECK 2026-10-08; prior decision and economics preserved. Anthropic's official notice still confirms only a confidential draft S-1 and says share count and offering price are unset. Current SEC search did not locate a public Anthropic S-1; an SEC result was a Form D for an unrelated series and was excluded. Reuters' review of the confidential prospectus reports 2025 revenue USD4.6B, operating loss above USD8B, net loss USD42B including a ~USD34B financing-value adjustment, cash/investments USD20.28B and USD518B of future infrastructure obligations, about 80% non-cancelable or payable regardless of usage. At a reported USD2T target, valuation is an inferred ~435x 2025 revenue; USD1T is ~217x and USD0.5T ~109x. Existing sensitivity remains: USD10,000 assumed allocation at USD2T, 0.5% slippage each side, zero commission/tax/FX, unchanged share count \u2014 bear USD0.5T => USD2,475 / -75.25%; base USD1T => USD4,950 / -50.50%; bull USD2.5T => USD12,375 / +23.75%. Not executable without public audited statements, price range, fully diluted shares, float, primary/secondary mix, allocation and lock-up.",
       "capital_action": "NO ACTION",
@@ -143,7 +143,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-04T17:04:10.356672+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "PRIOR EVIDENCE PRESERVED: SSC RFQ BPM026353/34483 requires 5 x UPX-ARL265H-A10-6400 systems (Core Ultra 7 265H, 64GB, Rev A1.0) with Wi-Fi/SATA kits, 120W adapter, cord and integration/testing, plus 5 x SIGNALSDR-01; firm all-inclusive CAD, DDP Ottawa, taxes extra; lowest responsive price; 30-day delivery, 2-year warranty and Supply Chain Integrity verification. NEW 2026-10-03: independent current index shows limited tendering and 2026-10-12 14:00 EDT close. OEM confirms exact 265H/64GB board. TME public listing shows USD 1,662.64 but zero stock; no written delivery commitment. Mouser Canada identifies exact SIGNALSDR-01 but exposes no price. An Indian supplier lists INR 582,531 including tax per unit and a 45-day ship time, already longer than the buyer's 30-day requirement. Using 2026-10-02 FX assumptions of CAD 1.424/USD and CAD 0.01479/INR, five boards plus five SDRs imply an indicative CAD 54,916 capital floor, excluding Wi-Fi/SATA kits, adapters, cords, integration, freight, customs/duty, FX buffer, warranty, financing and tax. This is not a compliant quote or landed-cost model; buyer price, revenue, margin and downside remain unknowable.",
       "capital_action": "NO ACTION",
@@ -160,7 +160,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T04:52:21.066155+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "PRIOR EVIDENCE PRESERVED. 2026-10-03 refresh: CanadaBuys now lists solicitation 26-58072-B as amended 2026-10-02 and closing 2026-10-16 14:00 ET (extended from 2026-10-06). Buyer requirement remains one new UPS for NRC Boucherville: >=15 kW; 208 V/60 Hz three-phase input/output; >=5 minutes at full load; batteries; <=250 kg; max 60 x 100 x 170 cm; BCS-815 signal-converter compatibility; Canadian electrical approval; dust filter; plug-and-play accessories; 1-year warranty/support; overload 125%/10 min and 150%/60 sec; lowest compliant price. Earlier OEM screening remains adverse: the documented Schneider 20 kW 3-string configuration was 680 kg and 197 cm high, and Eaton 93PM was 188 cm high; neither proves compliance. No exact compliant SKU, written supplier availability, quote, freight/duty/tax treatment or installation cost was found. ECONOMICS: buyer quantity is one unit, but purchase capital, bid price, landed cost, gross margin and cash duration are not calculable without a compliant written quote; inventing a proxy would violate the sourcing gate. Decision: REJECTED for this cycle despite the extension.",
       "capital_action": "NO ACTION",
@@ -172,7 +172,7 @@
         "buyer": "National Research Council of Canada (NRC)",
         "closing_date": "2026-10-16T14:00:00+00:00",
         "days_remaining": 8,
-        "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c"
       },
       "sla_overdue": false
@@ -188,7 +188,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-04T17:04:10.356672+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "PRIOR EVIDENCE PRESERVED. Decision 2026-10-03: REJECTED as an ORION brokerage opportunity in its current form. Government of India PIB confirms PM-DHARA is a \u20b91,86,405 crore program through FY2032-33: \u20b91,36,378 crore for intra-state transmission enabling 135 GW, \u20b950,000 crore for 50 GWh BESS and \u20b954,082 crore central assistance. Greenfield works will be tariff-based competitive bids implemented by transmission service providers under BOOM through state utilities. The Power Ministry reports prior GEC-II execution through 91 packages, 76 tendered and 74 awarded. Reuters independently values the new program at US$19.42B using \u20b995.78/US$. These are program facts, not an accessible buyer RFQ. Sources: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2317391&lang=6&reg=17 ; https://powermin.gov.in/sites/default/files/uploads/MOP_Annual_Report_Eng_2025_26.pdf ; https://www.reuters.com/business/india-approves-186-trillion-rupees-renewable-energy-programme-2026-09-30/",
       "capital_action": "NO ACTION",
@@ -212,9 +212,9 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
-      "prior_evidence": "Decision: WATCHLIST. Verified 2026-10-02 close USD 517.53, market cap about USD 3.853T and FY2026 diluted EPS USD 17.95 (price/FY2026 EPS 28.83x). FY2026 revenue was USD 331.839B (+18%), operating income USD 155.237B (+21%) and net income USD 133.749B (+31%). Q4 Azure/cloud-services revenue grew 43%; commercial remaining performance obligations reached USD 678B. Independent reporting says Microsoft expects FY2027 Q1 Azure growth of 45% constant currency and about USD 50B Q1 capex, with USD 175B calendar-2026 capex. Economics (explicit assumptions): USD 10,000 capital, fractional shares, zero commission, 0.15% slippage each way, four USD 0.98 quarterly dividends (USD 3.92/share), taxes and FX excluded. 19.2936 shares. Bull: EPS USD 21.50 x 30 P/E = USD 645 exit; net value USD 12,501.34, +25.01%. Base: EPS USD 20 x 25 = USD 500; USD 9,707.97, -2.92%. Bear: EPS USD 17 x 20 = USD 340; USD 6,625.62, -33.74%. Current price gives negative base-case return; no entry.",
+      "prior_evidence": "WATCHLIST REVIEW 2026-10-08; prior operating evidence preserved and price/economics refreshed. MSFT traded at USD529.76, volume 16.79M and market cap USD3.944T; the USD450 conditional level was not crossed. FY2026 primary results remain revenue USD331.839B (+18%), operating income USD155.237B (+21%), net income USD133.749B (+31%) and diluted EPS USD17.95. Q4 Azure/cloud services grew 43%; Reuters reported Q1 FY2027 Azure guidance of 45% constant currency and roughly USD50B Q1 capex / USD175B calendar-2026 capex. Microsoft confirms FY2027 Q1 earnings on 2026-10-28 and declared a USD0.98 quarterly dividend payable Dec 10. ECONOMICS \u2014 USD10,000, fractional shares, 12 months, 0.15% slippage each way, four assumed USD0.98 dividends (only the next dividend is declared), zero commission/tax/FX. 18.848 shares. Bull USD645 => USD12,213 / +22.13%; base USD500 => USD9,484 / -5.16%; bear USD340 => USD6,473 / -35.27%. Highly liquid, but earnings/capex gap risk remains. Decision: WATCHLIST, not QUALIFIED; no trade.",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -229,7 +229,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-08T08:53:16.285549+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "Decision 2026-10-07: REJECTED / no-bid after repeated exact-part and tender checks. DND requires 250 m of TE Connectivity EPD33573A to Halifax, 450 m of EPD33573A to Esquimalt, and 500 m of EPD-DND-21536 to Halifax. Bids are assessed DDP, subject to Canadian-goods/services preference and lowest-price selection. Fresh checks confirm the deadline remains 2026-10-16 14:00 ET and amendment 001 remains the latest surfaced amendment. Mouser identifies exact EPD-DND-21536 but reports restricted availability, no stock, region-sale restriction and RFQ pricing; EPD33573A evidence remains RFQ-only. No authorized supplier commits the full 700 m/500 m package, delivery, traceability, warranty or CAD DDP quote.",
       "capital_action": "NO ACTION",
@@ -253,7 +253,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "TRIGGER REVIEW 2026-10-07 22:38 ET: WATCHLIST retained, not QUALIFIED. Coinbase official quote: BTC USD83,215.89 at 2026-10-08 00:25 UTC; 24h range USD82,732.89-85,573.79 and volume USD38.90B. The USD82,000 trigger was not crossed; official 24h low remained 0.89% above it. CONDITIONAL ECONOMICS: USD10,000 capital, fractional BTC, assumed 0.90% exchange fee each side, zero extra slippage/tax/FX, weeks-to-months. Quantity after entry fee 0.119088 BTC. Bull USD90,000 => USD10,621.44 (+6.21%); downside USD78,000 => USD9,205.25 (-7.95%); severe USD60,000 => USD7,080.96 (-29.19%). Reward remains smaller than downside; targets are sensitivities, not forecasts. Liquidity is 24/7 but exact account fee tier, executable spread/order-book depth and validated paper-ledger/risk rules remain absent. No trade. Source: https://www.coinbase.com/converter/btcb",
       "capital_action": "NO ACTION",
@@ -277,7 +277,7 @@
       "owner": "Research Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "WATCHLIST",
       "prior_evidence": "Checked 2026-10-07 10:24 ET: SPY USD 774.69. Official State Street data as of Oct 6: NAV/close USD 779.09, 0.00% premium/discount, 0.00% 30-day median spread, 5.95M primary-exchange shares, 20.84x FY1 P/E, 22.48% estimated 3\u20135-year EPS growth, 0.98% distribution yield and 0.0945% annual expense ratio. Reuters reports the S&P 500 reached a fresh record while Q3 consensus profit growth is about 30%, but the 10-year Treasury yield remains near 5.34%, its highest since 2002; forecasters expect 5.00% by year-end but acknowledge repeated forecast misses and upside-yield risk. ECONOMICS (conditional research, not a trade): USD 10,000, 12 months, fractional shares, 0.10% slippage each side, 0.98% distribution yield, 0.0945% expense, zero commission/tax/FX. 12.8955 shares. Bull exit USD 994.54 => USD 12,900.80 (+29.01%); base USD 779.81 => USD 10,134.52 (+1.35%); bear USD 565.08 => USD 7,368.24 (-26.32%).",
       "capital_action": "NO ACTION",
@@ -292,22 +292,22 @@
       "status": "REJECTED",
       "reason": "Rejected by conservative research screen: extreme observed volatility/drawdown.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/AVAX-USD?range=1y&interval=1d",
-      "source_sha256": "63028b2b6059acc02bb61b736e5246c68674fedad12c3428c4d4b4d9c1022765",
+      "source_sha256": "d59b0b59e3f81741304eb8fc1572476e6de50a2b60b81d703fe2dbc4935ef06c",
       "features": {
-        "last": 10.729000091552734,
-        "return_20d": 0.409624644623398,
-        "return_60d": 0.6564913517013085,
-        "volatility_annualized": 0.909424853470765,
+        "last": 10.777999877929688,
+        "return_20d": 0.3147087563865132,
+        "return_60d": 0.6797817059288969,
+        "volatility_annualized": 0.8976100321855132,
         "max_drawdown_observed": -0.7950477525230227,
-        "volume_ratio": 0.9267848951878643,
-        "avg_daily_notional": 7049507854.59908,
-        "bars": 365
+        "volume_ratio": 0.8858875987087947,
+        "avg_daily_notional": 7291107650.157104,
+        "bars": 366
       },
       "currency": "USD",
       "missing": [],
       "owner": "Research Agent",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -425,7 +425,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
-      "source_sha256": "3a5124f7322b5d50e25da1daf5f8a38b2c52a2efced687b4619dbe94a461c530",
+      "source_sha256": "931838f9547bb7113b533e90dd37d856adebe91aa4512d5bcc1b2d0949e4fc93",
       "features": {
         "last": 645.8599853515625,
         "return_20d": 0.2394166486485474,
@@ -447,7 +447,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "ADVANCED MICRO DEVICES INC",
@@ -488,7 +488,7 @@
         "symbol": "AMD",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "21a29c75076d90fced568785d855fc427a15c7458bc0bb153a9dedd88ad3349e"
       },
       "sla_overdue": true
@@ -789,7 +789,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=1y&interval=1d",
-      "source_sha256": "832eca85cfb89ea3715c51d54696773f6087ea2f423c80b27e146438b606cc4b",
+      "source_sha256": "6fa28581052e5feaa73eab6ae1831b9ed37da28b7a6fd1d76c31eed4d87cee4a",
       "features": {
         "last": 265.44000244140625,
         "return_20d": 0.27738209116046897,
@@ -811,7 +811,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "CrowdStrike Holdings, Inc.",
@@ -844,7 +844,7 @@
         "symbol": "CRWD",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1"
       },
       "sla_overdue": true
@@ -858,7 +858,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/DDOG?range=1y&interval=1d",
-      "source_sha256": "dfd40ca7ac6d22b95174a4e370fb1c4a5e905f1f89a32b7a2b1acb661b8cd211",
+      "source_sha256": "4d6d4622d41708ac3fe27c55379b6cf8346380b4f5d74f26f030b987f506caec",
       "features": {
         "last": 271.3399963378906,
         "return_20d": 0.20451010428227567,
@@ -880,7 +880,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-02T02:42:37.339631+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "Datadog, Inc.",
@@ -921,7 +921,7 @@
         "symbol": "DDOG",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001561550.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "d3c4561fd839e25b1cde245ff3ca1f821b2a70e70d34688c5ede40bbc0f600a2"
       },
       "sla_overdue": true
@@ -1035,7 +1035,7 @@
       "buyer": "Government of the Northwest Territories (GNWT)",
       "closing_date": "2026-10-09T17:00:00+00:00",
       "days_remaining": 1,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "REJECTED",
       "origin": "official_tender_screen",
@@ -1043,7 +1043,7 @@
       "missing": [],
       "owner": "Supplier Agent",
       "review_at": "2026-10-08T00:59:11.057431+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1150,7 +1150,7 @@
       "buyer": "Department of Natural Resources (NRCan)",
       "closing_date": "2026-10-08T17:00:00+00:00",
       "days_remaining": 0,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "REJECTED",
       "origin": "official_tender_screen",
@@ -1158,7 +1158,7 @@
       "missing": [],
       "owner": "Supplier Agent",
       "review_at": "2026-10-07T00:56:44.082040+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1199,7 +1199,7 @@
       "buyer": "Shared Services Canada",
       "closing_date": "2026-10-09T14:00:00+00:00",
       "days_remaining": 1,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "REJECTED",
       "origin": "official_tender_screen",
@@ -1207,7 +1207,7 @@
       "missing": [],
       "owner": "Supplier Agent",
       "review_at": "2026-10-08T00:59:11.057431+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1221,7 +1221,7 @@
       "buyer": "Department of National Defence (DND)",
       "closing_date": "2026-10-09T13:00:00+00:00",
       "days_remaining": 1,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "REJECTED",
       "origin": "official_tender_screen",
@@ -1229,7 +1229,7 @@
       "missing": [],
       "owner": "Supplier Agent",
       "review_at": "2026-10-08T00:59:11.057431+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1243,7 +1243,7 @@
       "buyer": "Department of Public Works and Government Services (PSPC)",
       "closing_date": "2026-10-09T14:00:00+00:00",
       "days_remaining": 1,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "REJECTED",
       "origin": "official_tender_screen",
@@ -1251,7 +1251,7 @@
       "missing": [],
       "owner": "Supplier Agent",
       "review_at": "2026-10-08T00:59:11.057431+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1319,7 +1319,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/PANW?range=1y&interval=1d",
-      "source_sha256": "4dfe572f91eac457060137254a1d09c0924f65570b039a3ffa27015205b4d7ff",
+      "source_sha256": "f7d0c0a3e6a0e97681149cce534f2b252d6553ba483408098c817b931dd2d7ae",
       "features": {
         "last": 405.57000732421875,
         "return_20d": 0.21029543401122552,
@@ -1341,7 +1341,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-02T20:50:16.501306+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "Palo Alto Networks, Inc",
@@ -1382,7 +1382,7 @@
         "symbol": "PANW",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001327567.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "0fce8129e237331262a97979fde517a19797896a44f4d4eeab2a0767aaa6029f"
       },
       "sla_overdue": true
@@ -1397,7 +1397,7 @@
       "buyer": "Shared Services Canada",
       "closing_date": "2026-10-12T14:00:00+00:00",
       "days_remaining": 4,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "NEEDS DATA",
       "origin": "official_tender_screen",
@@ -1410,7 +1410,7 @@
       ],
       "owner": "Supplier Agent",
       "review_at": "2026-10-03T00:54:36.189733+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -1579,7 +1579,7 @@
       "owner": "Due Diligence Agent",
       "next_action": "Fetch the exact official notice/filing and obtain missing inputs before qualification.",
       "review_at": "2026-10-04T17:04:10.356672+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "prior_status": "REJECTED",
       "prior_evidence": "DEADLINE REVIEW 2026-10-07 16:38 ET: REJECTED/no-bid retained. Current independent mirror, updated Oct 7, confirms Amendment 001 and deadline 2026-10-09; buyer seeks PureStore/EverPure hardware, software, maintenance/support or equivalent, and bids must satisfy all requirements. Today the official CanadaBuys notice and official SSC attachment endpoints both returned connector access errors. Legitimate alternate Narwin confirms the deadline and amendment but exposes no Annex A quantities. Previously extracted RFQ terms remain: OEM certification/SCSI, detailed equivalency evidence, firm CAD unit pricing, DDP/duty/all component costs included, taxes separate, all mandatory criteria and lowest total responsive price. Exact line items/quantities and a compliant authorized supplier quote remain absent. Capital, bid revenue, landed cost, gross/net margin, expected return and cash duration are therefore uncalculable; zero tests/files are not success. Sources: https://canadabuys.canada.ca/en/tender-opportunities/tender-notice/ssc-26-00034652t ; https://sscp2pspc.ssc-spc.gc.ca/page.aspx/en/fil/download_public/57E8B20A-D8FD-4B3A-92CF-298FF25F0C0D ; https://app.narwin.ai/opportunities/084761b7-2700-4e56-b44c-d5ee83574af6/purestore-everpure-hardware-software-and-maintenance-and-support-or-equivalent-dnd.",
       "capital_action": "NO ACTION",
@@ -1591,7 +1591,7 @@
         "buyer": "Shared Services Canada",
         "closing_date": "2026-10-09T14:00:00+00:00",
         "days_remaining": 1,
-        "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c"
       },
       "sla_overdue": false
@@ -1606,7 +1606,7 @@
       "buyer": "Department of Natural Resources (NRCan)",
       "closing_date": "2026-10-12T12:00:00+00:00",
       "days_remaining": 4,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "NEEDS DATA",
       "origin": "official_tender_screen",
@@ -1619,7 +1619,7 @@
       ],
       "owner": "Supplier Agent",
       "review_at": "2026-10-04T00:53:44.942845+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -1633,7 +1633,7 @@
       "buyer": "Department of National Defence (DND)",
       "closing_date": "2026-10-13T14:00:00+00:00",
       "days_remaining": 5,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "NEEDS DATA",
       "origin": "official_tender_screen",
@@ -1646,7 +1646,7 @@
       ],
       "owner": "Supplier Agent",
       "review_at": "2026-10-04T17:04:10.356672+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -1716,7 +1716,7 @@
       "buyer": "Canadian Food Inspection Agency (CFIA)",
       "closing_date": "2026-10-14T14:00:00+00:00",
       "days_remaining": 6,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "NEEDS DATA",
       "origin": "official_tender_screen",
@@ -1729,7 +1729,7 @@
       ],
       "owner": "Supplier Agent",
       "review_at": "2026-10-07T12:55:04.604680+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -1742,7 +1742,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/ZS?range=1y&interval=1d",
-      "source_sha256": "b126be4fafa9e8005f9b292cb66f445c12c9ba7cd3d29c4009a365f15f1772d6",
+      "source_sha256": "4d5008d24778295a5b8a9e1a6aa7a104cc2518d473ad45ee22f4758def477830",
       "features": {
         "last": 213.5500030517578,
         "return_20d": 0.28567125348972433,
@@ -1764,7 +1764,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-07T16:53:04.116685+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "Zscaler Inc",
@@ -1805,7 +1805,7 @@
         "symbol": "ZS",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001713683.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "06053c252007a7d76d154eb77a698c48c832f9b4d6ad121a33b41d14a27a1434"
       },
       "sla_overdue": true
@@ -1819,7 +1819,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/SHOP?range=1y&interval=1d",
-      "source_sha256": "9177e1f5925b3b74b8595e1c4c8156b336161e501d7155702a6ebc1e4f9d2428",
+      "source_sha256": "350ed72f42ae8c1fdb8ce705d0973b83bec8c2b94e2ac4f8b0b89f73ae9cf545",
       "features": {
         "last": 166.02999877929688,
         "return_20d": 0.30948811089537576,
@@ -1841,7 +1841,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-07T16:53:04.116685+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "Shopify Inc.",
@@ -1882,7 +1882,7 @@
         "symbol": "SHOP",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001594805.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "6015c8703f4aaa9dfa8b13e2717e015862616ee9afa7aaf87348563c0ed74a52"
       },
       "sla_overdue": true
@@ -1897,7 +1897,7 @@
       "buyer": "Correctional Service of Canada (CSC)",
       "closing_date": "2026-10-16T14:00:00+00:00",
       "days_remaining": 8,
-      "source_observed_at": "2026-10-08T04:52:44.800128+00:00",
+      "source_observed_at": "2026-10-08T08:54:05.480132+00:00",
       "source_sha256": "6b2e568d8a34c78bec69a29f8b7bffb2f3860c50c1d47ff47f2769ed3ad2b01c",
       "status": "NEEDS DATA",
       "origin": "official_tender_screen",
@@ -1910,7 +1910,7 @@
       ],
       "owner": "Supplier Agent",
       "review_at": "2026-10-08T00:59:11.057431+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": true
     },
@@ -1923,7 +1923,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/PALL?range=1y&interval=1d",
-      "source_sha256": "ce75f3af9f55edd5aeea24b0fdccac986233abc2a93179ce4ff67120c1bb9379",
+      "source_sha256": "6a5d50d97e468dc61befdf647854d50761b226c1a07150528c6514ace6bb8ae9",
       "features": {
         "last": 20.299999237060547,
         "return_20d": -0.17378919457875153,
@@ -1945,7 +1945,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-08T20:51:23.530895+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "sla_overdue": false
     },
@@ -1958,7 +1958,7 @@
       "status": "NEEDS DATA",
       "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/GOLD?range=1y&interval=1d",
-      "source_sha256": "1d7dceea6836966f49fc3f1fc0ac3c65a9c1a9642f41af8581244f95fc2b931d",
+      "source_sha256": "e6ae1a81a39eb1937aaf571a536a993983feb8857b0725d466d4565a6f053c50",
       "features": {
         "last": 40.68000030517578,
         "return_20d": -0.17534971021293322,
@@ -1980,7 +1980,7 @@
       ],
       "owner": "Research Agent",
       "review_at": "2026-10-08T20:51:23.530895+00:00",
-      "evaluated_at": "2026-10-08T04:52:44.800128+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
       "capital_action": "NO ACTION",
       "fundamentals": {
         "company": "GOLD.COM, INC.",
@@ -2021,8 +2021,239 @@
         "symbol": "GOLD",
         "status": "observed",
         "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001591588.json",
-        "observed_at": "2026-10-08T04:52:44.800128+00:00",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
         "source_sha256": "9bab9830bd12172a461d74c6741c4c207e16d30dc24de98415f5e8fd1f212042"
+      },
+      "sla_overdue": false
+    },
+    "market:MDT": {
+      "id": "market:MDT",
+      "name": "MDT \u2014 technical research lead",
+      "symbol": "MDT",
+      "category": "Stocks",
+      "origin": "technical_screen",
+      "status": "NEEDS DATA",
+      "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/MDT?range=1y&interval=1d",
+      "source_sha256": "29f072ff7e8037aaacea4de097f6c00bea99033a2b7ef3e51c1bb64f905c5be9",
+      "features": {
+        "last": 85.51000213623047,
+        "return_20d": -0.0694308117944844,
+        "return_60d": 0.07831019981700993,
+        "volatility_annualized": 0.22456722554955594,
+        "max_drawdown_observed": -0.29995252901577907,
+        "volume_ratio": 3.1355267789897097,
+        "avg_daily_notional": 1524222201.3284683,
+        "bars": 251
+      },
+      "currency": "USD",
+      "missing": [
+        "independent fundamental/catalyst research",
+        "source cross-check",
+        "validated expected return and downside",
+        "capital sizing",
+        "entry/exit plan",
+        "out-of-sample evidence"
+      ],
+      "owner": "Research Agent",
+      "review_at": "2026-10-09T08:54:05.480132+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
+      "capital_action": "NO ACTION",
+      "fundamentals": {
+        "company": "Medtronic plc",
+        "annual_facts": {
+          "revenue": {
+            "value": 36364000000,
+            "unit": "USD",
+            "period_end": "2026-04-24",
+            "filed": "2026-06-18",
+            "accession": "0001628280-26-044354",
+            "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+          },
+          "net_income": {
+            "value": 4801000000,
+            "unit": "USD",
+            "period_end": "2026-04-24",
+            "filed": "2026-06-18",
+            "accession": "0001628280-26-044354",
+            "tag": "NetIncomeLoss"
+          },
+          "operating_cashflow": {
+            "value": 7330000000,
+            "unit": "USD",
+            "period_end": "2026-04-24",
+            "filed": "2026-06-18",
+            "accession": "0001628280-26-044354",
+            "tag": "NetCashProvidedByUsedInOperatingActivities"
+          },
+          "diluted_eps": {
+            "value": 3.73,
+            "unit": "USD/shares",
+            "period_end": "2026-04-24",
+            "filed": "2026-06-18",
+            "accession": "0001628280-26-044354",
+            "tag": "EarningsPerShareDiluted"
+          }
+        },
+        "symbol": "MDT",
+        "status": "observed",
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001613103.json",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
+        "source_sha256": "38fb8ec4139e6db2fa9bcd6cce1c3de5d9fcb3838ad9a63a2e3c74a7afc79b27"
+      },
+      "sla_overdue": false
+    },
+    "market:ISRG": {
+      "id": "market:ISRG",
+      "name": "ISRG \u2014 technical research lead",
+      "symbol": "ISRG",
+      "category": "Stocks",
+      "origin": "technical_screen",
+      "status": "NEEDS DATA",
+      "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/ISRG?range=1y&interval=1d",
+      "source_sha256": "ca8dd5993d9b7fd643b2174deac14512c314e4aa01e266f21a58a63093a768b6",
+      "features": {
+        "last": 414.5199890136719,
+        "return_20d": 0.17347978845384282,
+        "return_60d": 0.0922792859385293,
+        "volatility_annualized": 0.45639828728698106,
+        "max_drawdown_observed": -0.4399595130529892,
+        "volume_ratio": 0.817877702264046,
+        "avg_daily_notional": 960938165.9315491,
+        "bars": 251
+      },
+      "currency": "USD",
+      "missing": [
+        "independent fundamental/catalyst research",
+        "source cross-check",
+        "validated expected return and downside",
+        "capital sizing",
+        "entry/exit plan",
+        "out-of-sample evidence"
+      ],
+      "owner": "Research Agent",
+      "review_at": "2026-10-09T08:54:05.480132+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
+      "capital_action": "NO ACTION",
+      "fundamentals": {
+        "company": "Intuitive Surgical, Inc.",
+        "annual_facts": {
+          "revenue": {
+            "value": 10064700000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-02-03",
+            "accession": "0001035267-26-000010",
+            "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+          },
+          "net_income": {
+            "value": 2856000000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-02-03",
+            "accession": "0001035267-26-000010",
+            "tag": "NetIncomeLoss"
+          },
+          "operating_cashflow": {
+            "value": 3030500000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-02-03",
+            "accession": "0001035267-26-000010",
+            "tag": "NetCashProvidedByUsedInOperatingActivities"
+          },
+          "diluted_eps": {
+            "value": 7.87,
+            "unit": "USD/shares",
+            "period_end": "2025-12-31",
+            "filed": "2026-02-03",
+            "accession": "0001035267-26-000010",
+            "tag": "EarningsPerShareDiluted"
+          }
+        },
+        "symbol": "ISRG",
+        "status": "observed",
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001035267.json",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
+        "source_sha256": "b386a39dc2989008a01e4be5e12444e330e3a98b86c714e3b063b246235db44b"
+      },
+      "sla_overdue": false
+    },
+    "market:SLB": {
+      "id": "market:SLB",
+      "name": "SLB \u2014 technical research lead",
+      "symbol": "SLB",
+      "category": "Stocks",
+      "origin": "technical_screen",
+      "status": "NEEDS DATA",
+      "reason": "Price/volume anomaly identified; it is not a valuation, predictive edge or expected return. SEC annual financial facts retrieved; full thesis and recent-quarter review still required.",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/SLB?range=1y&interval=1d",
+      "source_sha256": "145bf0eb3897a2481a3cf735768841a129a346343f4444d2306994fef20cd50a",
+      "features": {
+        "last": 47.959999084472656,
+        "return_20d": -0.15933392242156053,
+        "return_60d": 0.008834626858581718,
+        "volatility_annualized": 0.4095384069385604,
+        "max_drawdown_observed": -0.22272019553135258,
+        "volume_ratio": 1.0912314600724409,
+        "avg_daily_notional": 662718461.3491058,
+        "bars": 251
+      },
+      "currency": "USD",
+      "missing": [
+        "independent fundamental/catalyst research",
+        "source cross-check",
+        "validated expected return and downside",
+        "capital sizing",
+        "entry/exit plan",
+        "out-of-sample evidence"
+      ],
+      "owner": "Research Agent",
+      "review_at": "2026-10-09T08:54:05.480132+00:00",
+      "evaluated_at": "2026-10-08T08:54:05.480132+00:00",
+      "capital_action": "NO ACTION",
+      "fundamentals": {
+        "company": "SLB LIMITED/NV",
+        "annual_facts": {
+          "revenue": {
+            "value": 35708000000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-01-23",
+            "accession": "0001193125-26-021017",
+            "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+          },
+          "net_income": {
+            "value": 3374000000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-01-23",
+            "accession": "0001193125-26-021017",
+            "tag": "NetIncomeLoss"
+          },
+          "operating_cashflow": {
+            "value": 6489000000,
+            "unit": "USD",
+            "period_end": "2025-12-31",
+            "filed": "2026-01-23",
+            "accession": "0001193125-26-021017",
+            "tag": "NetCashProvidedByUsedInOperatingActivities"
+          },
+          "diluted_eps": {
+            "value": 2.35,
+            "unit": "USD/shares",
+            "period_end": "2025-12-31",
+            "filed": "2026-01-23",
+            "accession": "0001193125-26-021017",
+            "tag": "EarningsPerShareDiluted"
+          }
+        },
+        "symbol": "SLB",
+        "status": "observed",
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000087347.json",
+        "observed_at": "2026-10-08T08:54:05.480132+00:00",
+        "source_sha256": "8ae73ad4b096441afa9626e414020b112e1b1f3434938b01d26ea0aae504a822"
       },
       "sla_overdue": false
     }
@@ -2139,6 +2370,27 @@
       "price": 64.43000030517578,
       "observed_bar": "2026-10-08T00:00:00+00:00",
       "due_at": "2026-10-15T04:52:44.800128+00:00"
+    },
+    {
+      "id": "875aede0-7ac5-4445-bdc7-40ba125fa218:MDT",
+      "symbol": "MDT",
+      "price": 85.51000213623047,
+      "observed_bar": "2026-10-07T13:30:00+00:00",
+      "due_at": "2026-10-15T08:54:05.480132+00:00"
+    },
+    {
+      "id": "875aede0-7ac5-4445-bdc7-40ba125fa218:ISRG",
+      "symbol": "ISRG",
+      "price": 414.5199890136719,
+      "observed_bar": "2026-10-07T13:30:00+00:00",
+      "due_at": "2026-10-15T08:54:05.480132+00:00"
+    },
+    {
+      "id": "875aede0-7ac5-4445-bdc7-40ba125fa218:SLB",
+      "symbol": "SLB",
+      "price": 47.959999084472656,
+      "observed_bar": "2026-10-07T13:30:00+00:00",
+      "due_at": "2026-10-15T08:54:05.480132+00:00"
     }
   ],
   "outcomes": [
