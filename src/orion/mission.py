@@ -240,6 +240,19 @@ def fundamental_scan(symbols, now, getter=fetch):
     if not symbols:
         return []
     registry_url = "https://www.sec.gov/files/company_tickers.json"
+    symbols = sorted(set(symbols))
+    output = [
+        {
+            "symbol": symbol,
+            "status": "not_applicable",
+            "source": registry_url,
+            "note": "Non-US exchange ticker is outside the SEC company-facts universe",
+        }
+        for symbol in symbols if "." in symbol
+    ]
+    symbols = [symbol for symbol in symbols if "." not in symbol]
+    if not symbols:
+        return output
     try:
         registry = json.loads(getter(registry_url))
         ciks = {r["ticker"]: r["cik_str"] for r in registry.values()}
@@ -253,8 +266,7 @@ def fundamental_scan(symbols, now, getter=fetch):
         if not checked or not timedelta(0) <= now-checked <= timedelta(days=30):
             return [{"symbol": s, "status": "unavailable", "source": registry_url, "error": str(exc)} for s in symbols]
         ciks = cached["mapping"]
-    output = []
-    for symbol in sorted(set(symbols)):
+    for symbol in symbols:
         if symbol not in ciks:
             output.append({"symbol": symbol, "status": "unavailable", "source": registry_url, "error": "No SEC ticker mapping"})
             continue
@@ -300,7 +312,7 @@ def run_mission(universe, backlog, previous=None, now=None, getter=fetch, worker
     fundamental_by_symbol = {f["symbol"]: f for f in fundamentals if f["status"] == "observed"}
     for f in fundamentals:
         task(tasks, cycle, "Research Agent", f["symbol"], f, now,
-             "COMPLETED" if f["status"] == "observed" else "FAILED")
+             "COMPLETED" if f["status"] in {"observed", "not_applicable"} else "FAILED")
         if f["status"] == "observed":
             task(tasks, cycle, "Due Diligence Agent", f["symbol"],
                  {"primary_source": f["source"], "annual_facts": f["annual_facts"],

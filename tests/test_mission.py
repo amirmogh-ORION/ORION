@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta, timezone
 import pytest
-from orion.mission import history, run_mission, parse_tenders, TENDERS, review_backlog, annual_facts
+from orion.mission import history, run_mission, parse_tenders, TENDERS, review_backlog, annual_facts, fundamental_scan
 from orion.mission_sync import projection, sync_mission
 
 NOW = datetime(2026, 10, 1, 12, tzinfo=timezone.utc)
@@ -88,6 +88,20 @@ def test_follow_up_requires_new_observation_not_reused_stale_price():
     report, _ = run_mission({"Stocks": ["X"]}, [], first, NOW+timedelta(days=8),
                             lambda url: getter(url) if url == TENDERS else chart(NOW))
     assert report["metrics"]["outcomes_evaluated"] == 0
+
+
+def test_non_us_ticker_is_not_counted_as_sec_source_failure():
+    def unexpected_getter(url):
+        pytest.fail(f"SEC getter should not be called for non-US ticker: {url}")
+
+    result = fundamental_scan(["BCE.TO"], NOW, unexpected_getter)
+
+    assert result == [{
+        "symbol": "BCE.TO",
+        "status": "not_applicable",
+        "source": "https://www.sec.gov/files/company_tickers.json",
+        "note": "Non-US exchange ticker is outside the SEC company-facts universe",
+    }]
 
 
 def test_filing_parser_rejects_future_filings_and_quarter_as_annual():
