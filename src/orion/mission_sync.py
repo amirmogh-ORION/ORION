@@ -105,9 +105,10 @@ def projection(report, run_url):
 def sync_mission(client, report, run_url):
     rows, grouped = projection(report, run_url)
     existing_opportunities = {r["fields"].get("Opportunity"): r["fields"] for r in client.records("Opportunities")}
-    # An analyst or user can advance a candidate between machine screens.
-    # Do not overwrite their decision with another mechanical missing-data triage.
-    protected = {"QUALIFIED", "WATCHLIST", "REJECTED", "ACTIVE", "ENTRY_TRIGGERED", "EXIT_TRIGGERED", "CLOSED"}
+    # An analyst or user can advance or deliberately retain a candidate between machine screens.
+    # Protect every curated terminal or unresolved decision, including NEEDS DATA. A machine-created
+    # triage remains identifiable by its "Research decision:" prefix and may still be refreshed.
+    protected = {"QUALIFIED", "WATCHLIST", "REJECTED", "NEEDS DATA", "ACTIVE", "ENTRY_TRIGGERED", "EXIT_TRIGGERED", "CLOSED"}
     rows["Opportunities"] = ("Opportunity", [r for r in rows["Opportunities"][1]
         if not (existing_opportunities.get(r["Opportunity"], {}).get("Status") in protected
                 and existing_opportunities.get(r["Opportunity"], {}).get("Actual Result")
